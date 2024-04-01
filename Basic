@@ -21,3 +21,24 @@ print(f"Standart Sapma: {standart_sapma}")
 sayilar = [1, 2, 2, 3, 4, 5, 5, 5, 6]
 
 veri_analizi(sayilar)
+
+!pip install pandas openpyxl
+
+import pandas as pd
+
+def excel_verilerini_aktar(kaynak_dosya, hedef_dosya):
+	#Kaynak excel dosyasından verileri oku
+	veri = pd.read_excel(kaynak_dosya)
+
+
+#Verileri hedef excel dosyasına yaz
+with pd.ExcelWriter(hedef_dosya, engine='openpyxl') as writer:
+     veri.to_excel(writer, index=False)
+	 
+	 
+#Kullanımı
+kaynak_dosya = 'kaynak_xlsx' # Kaynak excel dosyasının adı veya yolu
+hedef_dosya ='hedef_xlsx' # Hedef excel dosyasının adı veya yolu
+
+
+excel_verilerini_aktar(kaynak_dosya, hedef_dosya)
