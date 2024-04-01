@@ -1,0 +1,7 @@
+# Örnek bir Phyton programı: Basit ses analizi ile duygu durumu tahmini
+
+# Gerekli kütüphanelerin yüklenmesi, Librosa (ses analizi için) - Sklearn (makine öğrenimi için)
+
+# Ses dosyasını yükleme ve özellik çıkarma
+
+def load_
