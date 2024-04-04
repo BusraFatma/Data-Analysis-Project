@@ -1,1 +1,33 @@
+import speech_recognition as sr
+import time
+from gtts import gTTs
+import os
 
+
+# Mikrofona erişim sağlıyoruz
+r = sr.Recognizer()
+
+# Ses kaydı sıklığı (saniye cinsinden)
+sample_rate =
+
+# Duygu sıklığı (dakika cinsinden)
+mood_interval = 5
+
+# Duygu anketi sorulduktan sonra geçen süre (saniye cinsinden)
+question_delay = 20
+
+# Duygu sıklığına göre zamanlayıcı başlatılıyor
+def schedule_mood_question():
+  time.sleep(mood_interval * 60)
+  ask_mood()
+
+# Duygu sorusu
+def ask_mood():
+  print("Şu anda nasıl hissediyorsun? (örn: iyi, kötü, normal)")
+
+# Ses kaydı yapıp, metne dönüştürme işlemi
+def record_and_transcribe_audio():
+  with sr.Mikrofon() as source:
+    print("Konuşmaya başlayınız!")
+    audio = r.listen(source)
+    try:
