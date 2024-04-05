@@ -14,9 +14,11 @@ sample_rate =
 mood_interval = 5
 
 # Duygu anketi sorulduktan sonra geçen süre (saniye cinsinden)
+
 question_delay = 20
 
 # Duygu sıklığına göre zamanlayıcı başlatılıyor
+
 def schedule_mood_question():
   time.sleep(mood_interval * 60)
   ask_mood()
