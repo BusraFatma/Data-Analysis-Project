@@ -7,13 +7,13 @@ import os
 # Mikrofona erişim sağlıyoruz
 r = sr.Recognizer()
 
-# Ses kaydı sıklığı (saniye cinsinden)
+# Ses kaydı sıklığı (Saniye cinsinden)
 sample_rate =
 
-# Duygu sıklığı (dakika cinsinden)
+# Duygu sıklığı (Dakika cinsinden)
 mood_interval = 5
 
-# Duygu anketi sorulduktan sonra geçen süre (saniye cinsinden)
+# Duygu anketi sorulduktan sonra geçen süre (Saniye cinsinden)
 
 question_delay = 20
 
