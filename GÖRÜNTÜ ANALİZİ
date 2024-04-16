@@ -1,1 +1,41 @@
+import cvb
+import time
 
+# Open the camera
+vin_device = cvb.DeviceFactory.open('cvb_driver_path')
+
+# Set up the camera parameters
+vin_device.AcquisitionFrameRateEnable.value = True
+vin_device.AcquisitionFrameRate.value = 30
+vin_device.Width.value = 1920
+vin_device.Height.value = 1080
+
+# Set up the trigger output
+device_node_map = vin_device.node_maps['Device']
+sw_trigger = device_node_map.outputLineSoftwareCmd
+sw_trigger.value = 0
+
+# Start the image acquisition
+vin_device.StartAcquisition()
+
+# Process the images
+while True:
+    # Get the next image
+    img = vin_device.GetNextImage()
+
+    # Process the image (e.g., thresholding)
+    gray = cv2.cvtColor(img.GetBuffer(), cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+    # Check if an incorrect part is detected
+    if cv2.countNonZero(thresh) > 1000:
+        # Send a trigger signal to the PLC system
+        sw_trigger.value = 1
+        time.sleep(0.01)
+        sw_trigger.value = 0
+
+    # Release the image buffer
+    img.Release()
+
+# Stop the image acquisition
+vin_device.StopAcquisition()
