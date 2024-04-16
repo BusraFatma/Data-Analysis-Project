@@ -1,12 +1,1 @@
-import cvb
-import time
 
-# Open the camera 
-vin_device = cvb.DeviceFactory.open('cvb_driver_path')
-
-# Set up the camera parameters
-
-vin_device.AcquisitionFrameRateEnable.value = True
-vin_device.AcquisitionFrameRate.value = True
-vin_device.Widht.value = 1920
-vin_device.Height.value = 1080
