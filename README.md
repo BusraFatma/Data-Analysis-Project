@@ -41,3 +41,5 @@
 - The system logs production data and quality control results.
   
 - It generates reports on production efficiency and quality level.
+
+**FOR SOUND ANALYSIS;**
