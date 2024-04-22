@@ -9,7 +9,7 @@
 
 *System Components and Functions:*
 
-**1- Optical Cameras:** 
+**1- Optical Cameras:** Continuously takes images from the production line.
 
 **2-Image Processing Software (Python/OpenCV):** Processes incoming images, checks that products are the correct size and shape, detects colour errors or other visual defects.
 
