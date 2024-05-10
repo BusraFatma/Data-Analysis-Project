@@ -43,3 +43,4 @@
 - It generates reports on production efficiency and quality level.
 
 **FOR SOUND ANALYSIS;**
+- Python software is suitable for sound analysis and library access is the most advantageous.
