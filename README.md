@@ -44,3 +44,6 @@
 
 **FOR SOUND ANALYSIS;**
 - Python software is suitable for sound analysis and library access is the most advantageous.
+
+- A few of the libraries to be used here are ‘libros and matplotlib’.
+
