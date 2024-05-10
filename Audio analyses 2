@@ -2,3 +2,9 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 
+def analyze_audio(file_path):
+    # Ses dosyasını yükleyin
+    y, sr = librosa.load(file_path)
+    
+    # Sesin süresini hesaplayın
+    duration = librosa.get_duration(y=y, sr=sr)
