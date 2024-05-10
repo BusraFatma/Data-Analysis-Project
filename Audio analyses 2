@@ -24,3 +24,8 @@ def analyze_audio(file_path):
         "duration_seconds": duration,
         "file_path": file_path
     }
+
+# Örnek dosya yolu
+file_path = 'path_to_your_audio_file.wav'
+results = analyze_audio(file_path)
+print(results)
