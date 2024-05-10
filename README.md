@@ -47,3 +47,5 @@
 
 - A few of the libraries to be used here are ‘libros and matplotlib’.
 
+- With this library; sound is loaded, motion times and duration are taken and sound is output.
+
