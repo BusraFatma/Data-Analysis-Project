@@ -18,3 +18,9 @@ def analyze_audio(file_path):
     plt.xlabel('Time (seconds)')
     plt.ylabel('Amplitude')
     plt.show()
+
+  return {
+        "sample_rate": sr,
+        "duration_seconds": duration,
+        "file_path": file_path
+    }
