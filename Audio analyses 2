@@ -8,3 +8,13 @@ def analyze_audio(file_path):
     
     # Sesin süresini hesaplayın
     duration = librosa.get_duration(y=y, sr=sr)
+
+ # Ses dosyasını görselleştirin
+    plt.figure(figsize=(
+    plt.figure(figsize=(
+12, 4))
+    librosa.display.waveshow(y, sr=sr)
+    plt.title('Waveform')
+    plt.xlabel('Time (seconds)')
+    plt.ylabel('Amplitude')
+    plt.show()
