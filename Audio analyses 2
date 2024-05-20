@@ -36,3 +36,31 @@ from textblob import TextBlob
 def ses_dosyasini_metne_cevir(dosya_yolu):
     # Ses tanıma nesnesi oluştur
     r = sr.Recognizer()
+
+ # Ses dosyasını aç
+    with sr.AudioFile(dosya_yolu) as source:
+        # Kaynaktan sesi al
+        audio_data = r.record(source)
+
+ # Ses verisini metne çevir
+        try:
+            text = r.recognize_google(audio_data, language='tr-TR')
+            print("Metne Çevrilen Ses: " + text)
+            return text
+        except sr.UnknownValueError:
+            print("Google Speech Recognition could not understand audio")
+        except sr.RequestError as e:
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+def duygu_analizi_yap(text):
+    # Metni TextBlob objesine dönüştür
+    analysis = TextBlob(text)
+    # Duygu analizi yap
+    if analysis.sentiment.polarity > 0:
+        return 'Pozitif'
+    elif analysis.sentiment.polarity == 0:
+        return 'Nötr'
+    else:
+        return 'Negatif'
+
+
