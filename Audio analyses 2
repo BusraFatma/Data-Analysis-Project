@@ -29,3 +29,6 @@ def analyze_audio(file_path):
 file_path = 'path_to_your_audio_file.wav'
 results = analyze_audio(file_path)
 print(results)
+
+import speech_recognition as sr
+from textblob import TextBlob
