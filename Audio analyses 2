@@ -32,3 +32,7 @@ print(results)
 
 import speech_recognition as sr
 from textblob import TextBlob
+
+def ses_dosyasini_metne_cevir(dosya_yolu):
+    # Ses tanıma nesnesi oluştur
+    r = sr.Recognizer()
