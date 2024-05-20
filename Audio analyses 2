@@ -68,3 +68,8 @@ dosya_yolu = 'ornek_ses_dosyasi.wav'
 
 # Ses dosyasını metne çevir
 metin = ses_dosyasini_metne_cevir(dosya_yolu)
+
+# Metin üzerinde duygu analizi yap
+if metin:
+    duygu = duygu_analizi_yap(metin)
+    print("Çağrının Duygusal Analizi: " + duygu)
