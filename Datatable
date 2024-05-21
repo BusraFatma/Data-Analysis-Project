@@ -30,3 +30,11 @@ svg.selectAll("rect")
 **SVG.js**
 SVG.js is a simpler and more direct library for working on SVG. Although not as flexible as D3.js, it allows easy manipulation of SVG elements.
 
+// SVG elementi oluşturma
+var draw = SVG().addTo('body').size(500, 500);
+
+// Daire çizme
+var circle = draw.circle(100).move(200, 200).fill('purple');
+
+// Dikdörtgen çizme
+var rect = draw.rect(100, 50).move(50, 50).fill('orange');
