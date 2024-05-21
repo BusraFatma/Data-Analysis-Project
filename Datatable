@@ -1,2 +1,5 @@
-D3.js ve SVG.js, web uygulamalarında görselleştirme yapmak için kullanılan iki popüler JavaScript kütüphanesidir.
-Her ikisi de SVG (Scalable Vector Graphics) kullanarak görseller oluşturmanıza olanak tanır. 
+D3.js and SVG.js are two popular JavaScript libraries used for visualisation in web applications.
+Both allow you to create visuals using SVG (Scalable Vector Graphics). 
+
+D3.js (Data-Driven Documents)
+Allows you to make interactive visualisations with data. D3 manipulates documents based on data, interacting directly with the DOM. It is versatile and offers a large set of APIs for creating complex visualisations.
