@@ -27,4 +27,6 @@ svg.selectAll("rect")
     .attr("height", d => d)
     .attr("fill", "green");
 
-SVG.js
+**SVG.js**
+SVG.js is a simpler and more direct library for working on SVG. Although not as flexible as D3.js, it allows easy manipulation of SVG elements.
+
