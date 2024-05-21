@@ -3,3 +3,26 @@ Both allow you to create visuals using SVG (Scalable Vector Graphics).
 
 D3.js (Data-Driven Documents)
 Allows you to make interactive visualisations with data. D3 manipulates documents based on data, interacting directly with the DOM. It is versatile and offers a large set of APIs for creating complex visualisations.
+
+// SVG elementi oluşturma
+var svg = d3.select("body").append("svg")
+            .attr("width", 500)
+            .attr("height", 500);
+
+// Daire çizme
+svg.append("circle")
+    .attr("cx", 250)
+    .attr("cy", 250)
+    .attr("r", 50)
+    .style("fill", "blue");
+
+// Veri bağlama ve çubuk grafik çizme
+var data = [30, 70, 110];
+svg.selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("x", (d, i) => i * 50)
+    .attr("y", d => 500 - d)
+    .attr("width", 40)
+    .attr("height", d => d)
+    .attr("fill", "green");
