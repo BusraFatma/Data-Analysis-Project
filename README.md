@@ -49,3 +49,8 @@
 
 - With this library; sound is loaded, motion times and duration are taken and sound is output.
 
+
+
+**DATA COLLECTION and PREPROCESSING;**
+- **Sensor Integration:** Continuously collecting data from sensors to measure current and voltage. These sensors can provide real-time data streaming.
+
