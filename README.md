@@ -63,3 +63,11 @@
  **Model Training;**
  - Anomaly Detection and Prediction Model: Using machine learning or deep learning techniques, models are developed that detect unexpected changes in current and voltage or potential faults. For example, an LSTM (Long Short-Term Memory) network can be used to learn trends and patterns in time series data.
 
+**Decision Making and Warning System;**
+- **Automatic Alerts:** The model automatically sends alerts when it detects changes above set thresholds. This is critical for protecting equipment and optimising maintenance schedules.
+
+- **Continuous Learning:** The model is continuously updated and refined with new data, making it more accurate and reliable over time.
+
+**Integration and Visualisation;**
+- Dashboard Integration: Analysis results are visualised in a way that decision makers and technicians can easily access and understand. These dashboards provide real-time data monitoring and control.
+
