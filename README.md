@@ -60,3 +60,6 @@
 **Feature Engineering;** 
 - **Feature Extraction:** It is ensured that the model learns better by extracting time and frequency based features from current and voltage data. For example, maximum, minimum and average values, fluctuations and peak values.
 
+ **Model Training;**
+ - Anomaly Detection and Prediction Model: Using machine learning or deep learning techniques, models are developed that detect unexpected changes in current and voltage or potential faults. For example, an LSTM (Long Short-Term Memory) network can be used to learn trends and patterns in time series data.
+
