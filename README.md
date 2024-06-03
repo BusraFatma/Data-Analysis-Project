@@ -62,6 +62,16 @@
 
  **Model Training;**
  - **Anomaly Detection and Prediction Model:** Using machine learning or deep learning techniques, models are developed that detect unexpected changes in current and voltage or potential faults. For example, an LSTM (Long Short-Term Memory) network can be used to learn trends and patterns in time series data.
+   
+  **Structure and Working Principle of LSTM:** 
+ - LSTM units consist of cell state and three gates:
+
+Forget Gate: Determines which information of the cell state is to be forgotten.
+Input Gate: Decides how much of the new information should be added to the cell state.
+Output Gate: Determines which information is passed to the next layer.
+These gates decide what information is allowed to pass through and what information is updated in the cell state. This structure allows the LSTM to retain information for long periods of time and use this information when needed.
+
+ - 
 
 **Decision Making and Warning System;**
 - **Automatic Alerts:** The model automatically sends alerts when it detects changes above set thresholds. This is critical for protecting equipment and optimising maintenance schedules.
