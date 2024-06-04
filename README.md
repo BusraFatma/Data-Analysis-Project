@@ -54,7 +54,7 @@
 **DATA COLLECTION and PREPROCESSING;**
 - **Sensor Integration:** Continuously collecting data from sensors to measure current and voltage. These sensors can provide real-time data streaming.
   
-- **Data Cleaning and Normalisation:** Cleaning and normalisation of the collected data is important for the correct operation of the AI model. Cleaning noises, missing data and normalising different scales is done at this stage.
+- **Data Cleaning and Normalisation:** Cleaning and normalisation of the collected data is important for the correct operation of the AI model. Cleaning noises, missing data and normalising different scales is done at this stage
 
 
 **Feature Engineering;** 
