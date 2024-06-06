@@ -4,7 +4,7 @@
 
 - PLC: To control the production line and sensors (including cameras).
 - Optical Cameras: To take images of products or the production process.
-- Python and OpenCV: To process and analyse images.
+- Python and OpenCV: To process and analyse images
   
 
 *System Components and Functions:*
