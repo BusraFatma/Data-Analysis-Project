@@ -26,7 +26,7 @@
   
 - Quality control tests are performed for each product using Python and OpenCV.
   
-- Signals are generated for defective products.
+- Signals are generated for defective products..
 
 **PLC Control:**
 
