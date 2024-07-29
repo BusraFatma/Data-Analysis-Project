@@ -24,7 +24,7 @@ veri_analizi(sayilar)
 
 !pip install pandas openpyxl
 
-import pandas as pd.
+import pandas as pd
 
 def excel_verilerini_aktar(kaynak_dosya, hedef_dosya):
 	#Kaynak excel dosyasından verileri oku
