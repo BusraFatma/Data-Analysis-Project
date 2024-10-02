@@ -36,4 +36,10 @@ def record_and_transcribe_audio():
         print("Sizden şunları duydum: " + r.recognize_google(audio))
     expect sr.UnknownValueError:
         print("Ses tanıma işlemi başarısız oldu!")
+
+import librosa
+import librosa.display
+import numpy as np
+import matplotlib.pyplot as plt
+
       
