@@ -45,5 +45,10 @@ import matplotlib.pyplot as plt
 audio_path = 'ses_dosyasi.wav'  # Analiz etmek istediğiniz ses dosyasının yolu
 y, sr = librosa.load(audio_path) 
 
-
+plt.figure(figsize=(10, 4))
+librosa.display.waveshow(y, sr=sr)
+plt.title('Dalga Formu')
+plt.xlabel('Zaman (s)')
+plt.ylabel('Genlik')
+plt.show()
       
