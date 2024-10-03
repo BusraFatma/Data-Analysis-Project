@@ -52,3 +52,5 @@ plt.xlabel('Zaman (s)')
 plt.ylabel('Genlik')
 plt.show()
       
+D = np.abs(librosa.stft(y))  # STFT (Kısa Süreli Fourier Dönüşümü)
+DB = librosa.amplitude_to_db(D, ref=np.max)
