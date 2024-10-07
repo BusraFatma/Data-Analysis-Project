@@ -69,3 +69,8 @@ plt.title('Frekans Bileşenleri')
 plt.xlabel('Zaman (frame)')
 plt.ylabel('Frekans (Hz)')
 plt.show()
+
+import librosa
+import librosa.display
+import numpy as np
+import matplotlib.pyplot as plt
