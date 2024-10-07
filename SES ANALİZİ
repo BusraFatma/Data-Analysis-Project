@@ -77,3 +77,5 @@ import matplotlib.pyplot as plt
 
 filename = 'ornek_ses.wav'  # analiz edilecek ses dosyasının yolu
 y, sr = librosa.load(filename)
+
+mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
