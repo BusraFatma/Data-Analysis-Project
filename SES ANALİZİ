@@ -84,3 +84,5 @@ mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
 zcr = librosa.feature.zero_crossing_rate(y)
 
 rms = librosa.feature.rms(y=y)
+
+plt.figure(figsize=(12, 8))
