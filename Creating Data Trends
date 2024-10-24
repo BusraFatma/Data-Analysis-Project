@@ -30,3 +30,13 @@ data = pd.DataFrame({'Date': pd.date_range(start='2023-01-01', periods=30),
 
 # Calculate 7-day moving average
 data['Moving Average'] = data['Sales'].rolling(window=7).mean()
+
+# Plot the data
+plt.figure(figsize=(10, 5))
+plt.plot(data['Date'], data['Sales'], label='Daily Sales')
+plt.plot(data['Date'], data['Moving Average'], label='7-Day Moving Average', linewidth=2)
+plt.xlabel('Date')
+plt.ylabel('Sales')
+plt.title('Sales Trend Analysis')
+plt.legend()
+plt.show()
