@@ -15,3 +15,6 @@ In trend analysis, we focus on 3 main components:
 Trend: The overall increase or decrease pattern over time.
 Seasonality: Regular and repeating patterns (e.g., seasonal sales spikes).
 Irregularity (Noise): Random, unpredictable changes in the data.
+
+4. Apply Moving Average for Smoothing
+Moving averages help smooth out short-term fluctuations, making the trend more visible.
