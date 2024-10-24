@@ -86,4 +86,16 @@ def load_data(file_path):
     data = data.sort_values('Timestamp')  # Ensure it's time-ordered
     return data
 
+# Step 2: Calculate Vibration Metrics
+def calculate_metrics(df):
+    """
+    Calculates key metrics: RMS, Peak, Skewness, Kurtosis, and Z-scores.
+    """
+    df['RMS'] = df['Vibration (mm/s)'].rolling(window=7).mean()
+    df['Peak'] = df['Vibration (mm/s)'].rolling(window=7).max()
+    df['Skewness'] = df['Vibration (mm/s)'].rolling(window=7).apply(skew)
+    df['Kurtosis'] = df['Vibration (mm/s)'].rolling(window=7).apply(kurtosis)
+    df['Z-Score'] = zscore(df['Vibration (mm/s)'])
+    return df
+
 
