@@ -165,4 +165,28 @@ def main(file_path):
 if __name__ == "__main__":
     # Replace 'vibration_data.csv' with the path to your actual data file
     main('vibration_data.csv')
+Prepare your data:
+
+Create a CSV file with at least two columns: Timestamp and Vibration (mm/s).
+Example:
+Timestamp	Vibration (mm/s)
+2024-01-01 00:00:00	1.2
+2024-01-02 00:00:00	1.5
+2024-01-03 00:00:00	2.0
+Install dependencies: Run the following command to install the necessary Python libraries:
+
+pip install pandas numpy matplotlib scipy openpyxl
+Run the program: Save the code in a file (e.g., vibration_analysis.py). Place your CSV data file in the same directory, and then run the program:
+
+bash
+Kodu kopyala
+python vibration_analysis.py
+Review the output:
+
+The trend graph will display the vibration data, RMS, peak values, and anomalies.
+An Excel report will be generated with the complete analysis.
+Customization Options:
+Adjust Z-score threshold: Change the z_threshold parameter in the detect_anomalies() function to control how sensitive the anomaly detection is.
+Change window size: Modify the rolling window size for RMS and peak calculations as needed.
+Add more metrics: You can add other statistical metrics like variance or standard deviation.
 
