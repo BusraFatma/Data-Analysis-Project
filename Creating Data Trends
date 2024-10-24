@@ -108,5 +108,61 @@ def detect_anomalies(df, z_threshold=2.0):
     df['Peak Detected'] = False
     df.loc[peaks, 'Peak Detected'] = True
     return df
+# Step 4: Plot Vibration Trends and Anomalies
+def plot_vibration_trends(df):
+    """
+    Plots the vibration trends with RMS, Peak values, and anomaly indicators.
+    """
+    plt.figure(figsize=(12, 6))
+    
+    # Plot vibration and rolling RMS
+    plt.plot(df['Timestamp'], df['Vibration (mm/s)'], label='Vibration (mm/s)', marker='o')
+    plt.plot(df['Timestamp'], df['RMS'], label='7-Day RMS', linewidth=2)
+    plt.plot(df['Timestamp'], df['Peak'], label='7-Day Peak', linestyle='--')
 
+    # Mark anomalies and peaks
+    anomalies = df[df['Anomaly']]
+    plt.scatter(anomalies['Timestamp'], anomalies['Vibration (mm/s)'], 
+                color='red', label='Anomalies', zorder=5)
+
+    peaks = df[df['Peak Detected']]
+    plt.scatter(peaks['Timestamp'], peaks['Vibration (mm/s)'], 
+                color='green', marker='x', label='Peaks', zorder=5)
+
+    plt.xlabel('Timestamp')
+    plt.ylabel('Vibration (mm/s)')
+    plt.title('Vibration Trend Analysis with Anomalies and Peaks')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# Step 5: Export Results to CSV or Excel
+def export_report(df, output_path='vibration_report.xlsx'):
+    """
+    Exports the data and metrics to an Excel report.
+    """
+    df.to_excel(output_path, index=False)
+    print(f"Report saved to {output_path}")
+
+# Step 6: Main Function to Run the Analysis
+def main(file_path):
+    # Load data
+    df = load_data(file_path)
+
+    # Calculate metrics
+    df = calculate_metrics(df)
+
+    # Detect anomalies
+    df = detect_anomalies(df)
+
+    # Plot vibration trends
+    plot_vibration_trends(df)
+
+    # Export report
+    export_report(df)
+
+# Example Usage
+if __name__ == "__main__":
+    # Replace 'vibration_data.csv' with the path to your actual data file
+    main('vibration_data.csv')
 
