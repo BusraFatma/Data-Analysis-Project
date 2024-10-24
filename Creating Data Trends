@@ -18,3 +18,12 @@ Irregularity (Noise): Random, unpredictable changes in the data.
 
 4. Apply Moving Average for Smoothing
 Moving averages help smooth out short-term fluctuations, making the trend more visible.
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Example data
+data = pd.DataFrame({'Date': pd.date_range(start='2023-01-01', periods=30),
+                     'Sales': [50, 52, 53, 51, 56, 58, 57, 60, 65, 64,
+                               62, 63, 67, 68, 65, 70, 75, 77, 76, 80,
+                               85, 82, 87, 85, 90, 88, 95, 96, 97, 100]})
