@@ -1,5 +1,17 @@
 1. Prepare and Clean the Data
+
 Identify and handle missing or erroneous data.
 Normalize the data if necessary (for example, when the data is on different scales).
 Ensure that time series data is properly sorted with consistent intervals.
 
+isualize the Data (Initial Exploration)
+
+Plot the data to observe trends, seasonal patterns, or irregularities.
+Line charts are ideal for visualizing time-series trends.
+
+3. Identify the Trend Components
+In trend analysis, we focus on 3 main components:
+
+Trend: The overall increase or decrease pattern over time.
+Seasonality: Regular and repeating patterns (e.g., seasonal sales spikes).
+Irregularity (Noise): Random, unpredictable changes in the data.
