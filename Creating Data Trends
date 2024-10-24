@@ -46,3 +46,11 @@ To better understand trends and seasonality, you can apply time-series models su
 
 ARIMA (AutoRegressive Integrated Moving Average): Commonly used for forecasting time-series data.
 Holt-Winters Model: Suitable for data with both trend and seasonal patterns.
+
+6. Forecasting and Model Validation
+Split the data into training and test sets to evaluate model accuracy.
+Use error metrics (MAE, MSE, RMSE) to assess model performance.
+
+7. Reporting and Presentation
+Visualize the results and create a report with key findings.
+Highlight whether a significant trend or seasonality exists and provide actionable insights for the future.
