@@ -40,3 +40,9 @@ plt.ylabel('Sales')
 plt.title('Sales Trend Analysis')
 plt.legend()
 plt.show()
+
+// 5. Use Time-Series Models //
+To better understand trends and seasonality, you can apply time-series models such as:
+
+ARIMA (AutoRegressive Integrated Moving Average): Commonly used for forecasting time-series data.
+Holt-Winters Model: Suitable for data with both trend and seasonal patterns.
