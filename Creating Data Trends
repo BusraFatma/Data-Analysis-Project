@@ -98,4 +98,15 @@ def calculate_metrics(df):
     df['Z-Score'] = zscore(df['Vibration (mm/s)'])
     return df
 
+# Step 3: Detect Anomalies Using Z-Score and Peaks
+def detect_anomalies(df, z_threshold=2.0):
+    """
+    Detects anomalies using Z-scores and significant peaks.
+    """
+    df['Anomaly'] = df['Z-Score'].abs() > z_threshold
+    peaks, _ = find_peaks(df['Vibration (mm/s)'], height=2)
+    df['Peak Detected'] = False
+    df.loc[peaks, 'Peak Detected'] = True
+    return df
+
 
