@@ -54,3 +54,20 @@ Use error metrics (MAE, MSE, RMSE) to assess model performance.
 7. Reporting and Presentation
 Visualize the results and create a report with key findings.
 Highlight whether a significant trend or seasonality exists and provide actionable insights for the future.
+
+Comprehensive Vibration Monitoring Program for Motors and Fans
+Here is an advanced vibration monitoring program that allows you to:
+
+Load real-world data from a file (CSV).
+Analyze vibration metrics: RMS, peak, kurtosis, skewness.
+Detect anomalies: Using statistical thresholds (e.g., Z-scores).
+Plot trends with alerts and peak detection.
+Generate reports (in Excel or PDFs) if required.
+
+Program Structure Overview
+Reading data from a CSV or sensor input.
+Data preprocessing: Calculating key metrics (RMS, peak, skewness).
+Anomaly detection: Using Z-scores and peaks.
+Visualization: Plotting trends and flagging anomalies.
+Optional Reporting: Exporting key findings.
+
