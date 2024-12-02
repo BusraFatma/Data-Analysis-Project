@@ -72,3 +72,15 @@ while True:
         
         # 1 saniye bekle (gerçek zamanlı veri toplama için)
         time.sleep(1)
+
+# SCADA ve PLC parametrelerini ayarlayın
+
+plc_ip = '192.168.1.100'  # PLC'nin IP adresi
+plc_port = 502  # Modbus TCP portu (standart 502)
+register_address = 40001  # PLC'den alınacak register adresi
+
+opc_server = 'localhost'  # SCADA'nın OPC sunucusu
+tag_name = 'Recipe_1'  # SCADA'daki reçete etiket adı
+
+# Gerçek zamanlı veri transferini başlat
+real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_name)
