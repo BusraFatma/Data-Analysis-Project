@@ -7,6 +7,7 @@ from collections import deque
 
 
 # PLC ile iletişim (Modbus TCP) - Veri Çekme
+
 def get_plc_data(plc_ip, plc_port, register_address):
     client = ModbusTcpClient(plc_ip, port=plc_port)
     client.connect()
@@ -16,6 +17,7 @@ def get_plc_data(plc_ip, plc_port, register_address):
     return data
 
 # SCADA ile iletişim (OPC) - Veri Çekme
+
 def get_scada_data(opc_server, tag_name):
     opc_client = client.OPCClient(opc_server)
     opc_client.connect()
