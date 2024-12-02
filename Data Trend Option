@@ -4,3 +4,13 @@ import matplotlib.pyplot as plt
 from pymodbus.client.sync import ModbusTcpClient
 from openopc import client
 from collections import deque
+
+
+# PLC ile iletişim (Modbus TCP) - Veri Çekme
+def get_plc_data(plc_ip, plc_port, register_address):
+    client = ModbusTcpClient(plc_ip, port=plc_port)
+    client.connect()
+    result = client.read_holding_registers(register_address, 2)  # 2 register okuma (örnek)
+    data = result.registers
+    client.close()
+    return data
