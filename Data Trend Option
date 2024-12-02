@@ -49,3 +49,26 @@ class DataTrend:
         plt.legend()
         plt.show()
 
+# Gerçek Zamanlı Veri Akışı ve Reçete Transferi
+
+def real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_name):
+    data_trend = DataTrend(max_length=100)
+
+while True:
+        # PLC'den veri al
+        plc_data = get_plc_data(plc_ip, plc_port, register_address)
+        
+        # SCADA'dan reçeteyi al
+        scada_data = get_scada_data(opc_server, tag_name)
+        
+        # Zaman damgası (timestamp)
+        timestamp = time.time()
+        
+        # Veri trendini güncelle
+        data_trend.update_data(timestamp, plc_data, scada_data)
+        
+        # Gerçek zamanlı veri trendini çiz
+        data_trend.plot_trend()
+        
+        # 1 saniye bekle (gerçek zamanlı veri toplama için)
+        time.sleep(1)
