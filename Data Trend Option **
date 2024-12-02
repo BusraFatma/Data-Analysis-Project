@@ -1,0 +1,83 @@
+import time
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+from pymodbus.client.sync import ModbusTcpClient
+from openopc import client
+from collections import deque
+
+# Fabrika Sensör Verileri (Sanal)
+
+def simulate_sensor_data():
+    # Her makinadan gelen veriler rastgele olarak üretiliyor (sıcaklık, basınç, motor hızı)
+    return {
+        "temperature": round(random.uniform(60.0, 100.0), 2),  # Sıcaklık (Celsius)
+        "pressure": round(random.uniform(5.0, 10.0), 2),  # Basınç (bar)
+        "motor_speed": round(random.uniform(1500, 3000), 2)  # Motor Hızı (rpm)
+    }
+
+# PLC ile iletişim (Modbus TCP) - Veri Çekme
+
+def get_plc_data(plc_ip, plc_port, register_address):
+    client = ModbusTcpClient(plc_ip, port=plc_port)
+    client.connect()
+    result = client.read_holding_registers(register_address, 2)  # 2 register okuma (örnek)
+    data = result.registers
+    client.close()
+    return data
+
+# SCADA ile iletişim (OPC) - Veri Çekme
+def get_scada_data(opc_server, tag_name):
+    opc_client = client.OPCClient(opc_server)
+    opc_client.connect()
+    value = opc_client.read(tag_name)  # Reçeteyi SCADA'dan al
+    opc_client.close()
+    return value
+
+# Veri işleme ve trend oluşturma
+class DataTrend:
+    def __init__(self, max_length=100):
+        self.data_queue = deque(maxlen=max_length)
+        self.time_queue = deque(maxlen=max_length)
+    
+    def update_data(self, time_stamp, plc_data, scada_data):
+        self.time_queue.append(time_stamp)
+        self.data_queue.append({'PLC': plc_data, 'SCADA': scada_data})
+    
+    def plot_trend(self):
+        df = pd.DataFrame(list(self.data_queue))
+        df['Time'] = list(self.time_queue)
+        df.set_index('Time', inplace=True)
+        plt.figure(figsize=(10, 5))
+        plt.plot(df.index, df['PLC'], label='PLC Data', color='blue')
+        plt.plot(df.index, df['SCADA'], label='SCADA Data', color='red')
+        plt.xlabel('Time')
+        plt.ylabel('Value')
+        plt.title('Real-Time Data Trend')
+        plt.legend()
+        plt.show()
+
+# Gerçek Zamanlı Veri Akışı ve Reçete Transferi
+def real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_name):
+    data_trend = DataTrend(max_length=100)
+    
+    while True:
+        # PLC'den veri al (sanal sensör verisi)
+        plc_data = simulate_sensor_data()
+        
+        # SCADA'dan reçeteyi al
+        scada_data = get_scada_data(opc_server, tag_name)
+        
+        # Zaman damgası (timestamp)
+        timestamp = time.time()
+        
+        # Veri trendini güncelle
+        data_trend.update_data(timestamp, plc_data, scada_data)
+        
+        # Gerçek zamanlı veri trendini çiz
+        data_trend.plot_trend()
+        
+        # 1 saniye bekle (gerçek zamanlı veri toplama için)
+        time.sleep(1)
+
+
