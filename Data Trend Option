@@ -14,3 +14,12 @@ def get_plc_data(plc_ip, plc_port, register_address):
     data = result.registers
     client.close()
     return data
+
+# SCADA ile iletişim (OPC) - Veri Çekme
+def get_scada_data(opc_server, tag_name):
+    opc_client = client.OPCClient(opc_server)
+    opc_client.connect()
+    value = opc_client.read(tag_name)  # Reçeteyi SCADA'dan al
+    opc_client.close()
+    return value
+
