@@ -11,7 +11,7 @@ from collections import deque
 def get_plc_data(plc_ip, plc_port, register_address):
     client = ModbusTcpClient(plc_ip, port=plc_port)
     client.connect()
-    result = client.read_holding_registers(register_address, 2)  # 2 register okuma (örnek)
+    result = client.read_holding_registers(register_address, 2)   # 2 register okuma (örnek)
     data = result.registers
     client.close()
     return data
@@ -21,7 +21,31 @@ def get_plc_data(plc_ip, plc_port, register_address):
 def get_scada_data(opc_server, tag_name):
     opc_client = client.OPCClient(opc_server)
     opc_client.connect()
-    value = opc_client.read(tag_name)  # Reçeteyi SCADA'dan al
+    value = opc_client.read(tag_name)   # Reçeteyi SCADA'dan al
     opc_client.close()
     return value
+
+# Veri işleme ve trend oluşturma
+
+class DataTrend:
+    def __init__(self, max_length=100):
+        self.data_queue = deque(maxlen=max_length)
+        self.time_queue = deque(maxlen=max_length)
+    
+    def update_data(self, time_stamp, plc_data, scada_data):
+        self.time_queue.append(time_stamp)
+        self.data_queue.append({'PLC': plc_data, 'SCADA': scada_data})
+    
+    def plot_trend(self):
+        df = pd.DataFrame(list(self.data_queue))
+        df['Time'] = list(self.time_queue)
+        df.set_index('Time', inplace=True)
+        plt.figure(figsize=(10, 5))
+        plt.plot(df.index, df['PLC'], label='PLC Data', color='blue')
+        plt.plot(df.index, df['SCADA'], label='SCADA Data', color='red')
+        plt.xlabel('Time')
+        plt.ylabel('Value')
+        plt.title('Real-Time Data Trend')
+        plt.legend()
+        plt.show()
 
