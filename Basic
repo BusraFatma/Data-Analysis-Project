@@ -1,6 +1,6 @@
 !pip install numpy scipy
 
-import numpy as np.
+import numpy as np
 from scipy import stats
 
 
