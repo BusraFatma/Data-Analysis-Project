@@ -8,7 +8,7 @@ from pymodbus.client.sync import ModbusTcpClient
 from openopc import client
 from collections import deque
 
-# Fabrika Sensör Verileri (Sanal)
+# Fabrika Sensör Verileri (Sanal) //Algoritmayı eğitmek için kullanılır. Tüm aşamaları farklı değerleri görebilmek adına sanal sinyaller kullanılır//
 
 def simulate_sensor_data():
     # Her makinadan gelen veriler rastgele olarak üretiliyor (sıcaklık, basınç, motor hızı)
