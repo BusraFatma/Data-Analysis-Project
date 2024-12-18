@@ -1,4 +1,4 @@
-# Burada yapılan proje pilot olarak belirlenen ekipman için gerçek zamanlı scada ve PLC ile haberleşen
+# Burada yapılan proje pilot olarak belirlenen ekipman için gerçek zamanlı scada ve PLC ile haberleşip makina öğrenmesi ile kendi trendini oluştyracak bir sistem oluşturmaktır.
 
 import time
 import random
