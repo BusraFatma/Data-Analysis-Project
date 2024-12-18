@@ -13,7 +13,7 @@ from collections import deque
 def simulate_sensor_data():
     # Her makinadan gelen veriler rastgele olarak üretiliyor (sıcaklık, basınç, motor hızı)
     return {
-        "temperature": round(random.uniform(60.0, 100.0), 2),  # Sıcaklık (Celsius)
+        "temperature": round(random.uniform(60.0, 100.0), 2),  # Sıcaklık (Celsius) //Burada karşılaşılan örnekte sanal sinyal ile 2 basamaklı 60-100 derece arasında random sayı üretmek için yazılır.//
         "pressure": round(random.uniform(5.0, 10.0), 2),  # Basınç (bar)
         "motor_speed": round(random.uniform(1500, 3000), 2)  # Motor Hızı (rpm)
     }
