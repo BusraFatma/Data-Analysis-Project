@@ -1,3 +1,5 @@
+# Burada yapılan proje pilot olarak belirlenen ekipman için gerçek zamanlı scada ve PLC ile haberleşen
+
 import time
 import random
 import pandas as pd
@@ -89,6 +91,8 @@ tag_name = 'Recipe_1'  # SCADA'daki reçete etiket adı
 
 # Gerçek zamanlı veri transferini başlat
 real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_name)
+
+
 
 
 
