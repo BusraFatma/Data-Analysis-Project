@@ -19,7 +19,7 @@ def simulate_sensor_data():
         "motor_speed": round(random.uniform(1500, 3000), 2)  # Motor Hızı (rpm)
     }
 
-# PLC ile iletişim (Modbus TCP) - Veri Çekme.
+# PLC ile iletişim (Modbus TCP) - Veri Çekme
 
 def get_plc_data(plc_ip, plc_port, register_address):
     client = ModbusTcpClient(plc_ip, port=plc_port)
