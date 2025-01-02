@@ -1,7 +1,7 @@
 # Burada yapılan proje pilot olarak belirlenen ekipman için gerçek zamanlı scada ve PLC ile haberleşip makina öğrenmesi ile kendi trendini oluşturacak bir sistem oluşturmaktır.
 
 import time
-import random
+import random.
 import pandas as pd
 import matplotlib.pyplot as plt
 from pymodbus.client.sync import ModbusTcpClient
