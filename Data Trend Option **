@@ -17,6 +17,8 @@ def simulate_sensor_data():
         "pressure": round(random.uniform(5.0, 10.0), 2),  # Basınç (bar) 
         "pressure": round(5.0 + (math.sin(time.time()) * 2.5), 2) ## Burada gösterilen zamanla değişen, artan-azalan basıncı ölçmek için yazılır.
         "motor_speed": round(random.uniform(1500, 3000), 2)  # Motor Hızı (rpm)
+        "temparature": round(random.uniform(105.0,150,0),3), // 3 basamaklı bir değer ölçümü için random belirleyen bir sayı alır.
+        "pressure": round(random.uniform(3.0, 6.0), 2), // Basınca ait bar değerini gösterir.
     }
 
 # PLC ile iletişim (Modbus TCP) - Veri Çekme
