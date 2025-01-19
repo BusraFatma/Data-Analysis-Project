@@ -79,6 +79,7 @@ def real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_
         
         # Veri trendini güncelle
         data_trend.update_data(timestamp, plc_data, scada_data)
+        data_trend.update_data(timestamp, plc_data, scada_data)
         
         # Gerçek zamanlı veri trendini çiz
         data_trend.plot_trend()
