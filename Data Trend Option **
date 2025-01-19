@@ -25,7 +25,6 @@ def simulate_sensor_data():
 
 def get_plc_data(plc_ip, plc_port, register_address):
     client = ModbusTcpClient(plc_ip, port=plc_port)
-    client = ModbusTcpClient(plc_ip, port=plc=port2)
     client.connect()
     result = client.read_holding_registers(register_address, 2)  # 2 register okuma (örnek)
     data = result.registers
