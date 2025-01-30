@@ -75,7 +75,7 @@ while True:
 
 # SCADA ve PLC parametrelerini ayarlayın
 
-plc_ip = '192.168.1.100'  # PLC'nin IP adresi
+plc_ip = '192.168.1.100'  # PLC'nin IP adresi (Gerçek zamanlı IP giriniz.)
 plc_port = 502  # Modbus TCP portu (standart 502)
 register_address = 40001  # PLC'den alınacak register adresi
 
