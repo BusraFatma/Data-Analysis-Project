@@ -81,6 +81,7 @@ def real_time_data_transfer(plc_ip, plc_port, register_address, opc_server, tag_
         
         # Gerçek zamanlı veri trendini çiz
         data_trend.plot_trend()
+        data_trend.plo_trend()
         
         # 1 saniye bekle (gerçek zamanlı veri toplama için)
         time.sleep(1)
