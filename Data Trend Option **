@@ -21,7 +21,7 @@ def simulate_sensor_data():
         "pressure": round(random.uniform(3.0, 6.0), 2), // Basınca ait bar değerini gösterir.
     }
 
-# PLC ile iletişim (Modbus TCP) - Veri Çekme.
+# PLC ile iletişim (Modbus TCP) - Veri Çekme
 
 def get_plc_data(plc_ip, plc_port, register_address):
     client = ModbusTcpClient(plc_ip, port=plc_port)
