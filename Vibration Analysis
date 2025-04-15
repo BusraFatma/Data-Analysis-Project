@@ -66,3 +66,7 @@ def real_time_analysis(file_path):
     plt.ylabel("Amplitüd")
     plt.grid(True)
     plt.show()
+
+# Kullanıcıya dosya yolunu soralım ve analiz yapalım
+file_path = 'veri.csv'  # Burada veri dosyasının yolunu kullanacağız (örneğin "data.csv")
+real_time_analysis(file_path)
