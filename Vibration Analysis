@@ -15,3 +15,11 @@ N = len(t)
 yf = fft(y)
 xf = fftfreq(N, T)[:N // 2]  # Frekans aralığı
 yplot = 2.0 / N * np.abs(yf[:N // 2])  # Amplitüdü normalize etme
+# Frekans spektrumunu çizelim
+plt.figure(figsize=(10, 6))
+plt.plot(xf, yplot)
+plt.title("Vibrasyon Sinyali Frekans Spektrumu")
+plt.xlabel("Frekans (Hz)")
+plt.ylabel("Amplitüd")
+plt.grid(True)
+plt.show()
