@@ -40,3 +40,13 @@ def load_sensor_data(file_path):
     time = data['time']  # Zaman verisini alıyoruz
     signal = data['signal']  # Sinyal verisini alıyoruz
     return time, signal
+
+# FFT ve frekans analiz fonksiyonu
+def perform_fft(time, signal):
+    sampling_rate = 1 / (time[1] - time[0])  # Örnekleme hızı
+    N = len(time)  # Veri uzunluğu
+    T = 1.0 / sampling_rate  # Örnekleme periyodu
+    yf = fft(signal)  # FFT hesaplama
+    xf = fftfreq(N, T)[:N // 2]  # Frekans vektörü
+    yplot = 2.0 / N * np.abs(yf[:N // 2])  # Normalizasyon
+    return xf, yplot
