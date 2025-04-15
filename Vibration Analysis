@@ -58,3 +58,11 @@ def real_time_analysis(file_path):
 
   # FFT ile analiz et
     xf, yplot = perform_fft(time, signal)
+   # Frekans spektrumunu çiz
+    plt.figure(figsize=(10, 6))
+    plt.plot(xf, yplot)
+    plt.title("Vibrasyon Sinyali Frekans Spektrumu")
+    plt.xlabel("Frekans (Hz)")
+    plt.ylabel("Amplitüd")
+    plt.grid(True)
+    plt.show()
