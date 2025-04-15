@@ -1,3 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.fft import fft, fftfreq
+# Örnek veriler (vibrasyon sinyali) oluşturma
+# Gerçek dünya verileri için bu verileri sensörlerden alabilirsiniz
+sampling_rate = 1000  # Hz
+T = 1.0 / sampling_rate  # Örnekleme periyodu
+t = np.arange(0.0, 1.0, T)  # 1 saniyelik zaman vektörü
