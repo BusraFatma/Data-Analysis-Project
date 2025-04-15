@@ -50,3 +50,9 @@ def perform_fft(time, signal):
     xf = fftfreq(N, T)[:N // 2]  # Frekans vektörü
     yplot = 2.0 / N * np.abs(yf[:N // 2])  # Normalizasyon
     return xf, yplot
+
+# Gerçek zamanlı analiz ve görselleştirme
+def real_time_analysis(file_path):
+    # Veriyi yükle
+    time, signal = load_sensor_data(file_path)
+
